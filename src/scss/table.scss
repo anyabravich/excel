@@ -10,25 +10,27 @@
   padding-bottom: 2px;
 
   .row {
+    $this: &;
     display: flex;
     flex-direction: row;
     min-height: 20px;
     height: $row-height;
-  }
-
-  .row-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-width: $info-cell-width;
-    height: 100%;
-    border: 1px solid $border-color;
-    background: #f8f9fa;
-    border-top: none;
-  }
-
-  .row-data {
-    display: flex;
+    &-info {
+      z-index: 1;
+      position: sticky;
+      left: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-width: $info-cell-width;
+      height: 100%;
+      border: 1px solid $border-color;
+      background: #f8f9fa;
+      border-top: none;
+    }
+    &-data {
+      display: flex;
+    }
   }
 
   .column {
