@@ -11,14 +11,20 @@ function toCell() {
 
 function toColumn(col) {
   return `
-    <div class="column">${col}</div>
+    <div class="column">
+      ${col}
+      <div class="resize _col" data-resize="col"></div>
+    </div>
   `;
 }
 
 function createRow(i, content) {
   return `
     <div class="row">
-      <div class="row-info">${i && i}</div>
+      <div class="row-info">
+        ${i && i}
+        ${i && '<div class="resize _row" data-resize="row"></div>'}
+      </div>
       <div class="row-data">${content}</div>
     </div>
   `;
