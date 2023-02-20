@@ -2,6 +2,8 @@
 @import 'mixins';
 
 .excel__table {
+  overflow-y: auto;
+  height: 100vh;
   position: absolute;
   left: 0;
   right: 0;
@@ -10,11 +12,15 @@
   padding-bottom: 2px;
 
   .row {
-    $this: &;
     display: flex;
     flex-direction: row;
     min-height: 20px;
     height: $row-height;
+    &:first-child {
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
     &-info {
       z-index: 1;
       position: sticky;
